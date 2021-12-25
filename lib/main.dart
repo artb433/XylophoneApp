@@ -4,6 +4,11 @@ import 'package:flutter/material.dart';
 void main() => runApp(XylophoneApp());
 
 class XylophoneApp extends StatelessWidget {
+  void playSound(int noteNumber) {
+    final player = AudioCache();
+    player.play('note$noteNumber.wav');
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -11,14 +16,14 @@ class XylophoneApp extends StatelessWidget {
       home: Scaffold(
         body: SafeArea(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               // ignore: deprecated_member_use
               FlatButton(
                   minWidth: 400,
                   color: Colors.amber,
                   onPressed: () {
-                    final player = AudioCache();
-                    player.play('note1.wav');
+                    playSound(1);
                   },
                   child: Text('First note')),
               // ignore: deprecated_member_use
@@ -26,8 +31,7 @@ class XylophoneApp extends StatelessWidget {
                   minWidth: 400,
                   color: Colors.purple,
                   onPressed: () {
-                    final player = AudioCache();
-                    player.play('note2.wav');
+                    playSound(2);
                   },
                   child: Text('Second note')),
               // ignore: deprecated_member_use
@@ -35,8 +39,7 @@ class XylophoneApp extends StatelessWidget {
                   minWidth: 400,
                   color: Colors.red,
                   onPressed: () {
-                    final player = AudioCache();
-                    player.play('note3.wav');
+                    playSound(3);
                   },
                   child: Text('Third note')),
               // ignore: deprecated_member_use
@@ -44,8 +47,7 @@ class XylophoneApp extends StatelessWidget {
                   minWidth: 400,
                   color: Colors.green,
                   onPressed: () {
-                    final player = AudioCache();
-                    player.play('note4.wav');
+                    playSound(4);
                   },
                   child: Text('Fourth note')),
               // ignore: deprecated_member_use
@@ -53,17 +55,15 @@ class XylophoneApp extends StatelessWidget {
                   minWidth: 400,
                   color: Colors.blue,
                   onPressed: () {
-                    final player = AudioCache();
-                    player.play('note5.wav');
+                    playSound(5);
                   },
                   child: Text('Fiveth note')),
               // ignore: deprecated_member_use
               FlatButton(
                   minWidth: 400,
-                  color: Colors.amber,
+                  color: Colors.yellow,
                   onPressed: () {
-                    final player = AudioCache();
-                    player.play('note6.wav');
+                    playSound(6);
                   },
                   child: Text('Sixth note')),
               // ignore: deprecated_member_use
@@ -71,8 +71,7 @@ class XylophoneApp extends StatelessWidget {
                   minWidth: 400,
                   color: Colors.cyan,
                   onPressed: () {
-                    final player = AudioCache();
-                    player.play('note7.wav');
+                    playSound(7);
                   },
                   child: Text('Seventh note')),
             ],
